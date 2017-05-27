@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>RoboRanks</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+     <link rel = "stylesheet" type = "text/css" href = "index.css" />
+     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+     <link href="https://fonts.googleapis.com/css?family=Lato:700" rel="stylesheet">
+      <meta name="viewport" content="width=device-width, initial-scale = 1.0" />
+    <script language="javascript">
+        
+        var lessonName = prompt("What is the name of the lesson?");
+        var numLessons = Number (prompt("How many lessons are there?"));
+        
+        var numLessons = numLessons + 2;
+
+        var swap = function (img) {
+            img.src = 'file:///Users/claudioatilano/Desktop/Projects/RoboRank/Blank.jpg' === img.src ?
+                'file:///Users/claudioatilano/Desktop/Projects/RoboRank/Roboto.jpg'
+            : 'file:///Users/claudioatilano/Desktop/Projects/RoboRank/Blank.jpg';
+        };
+		function addRow(tableID) {
+
+			var table = document.getElementById(tableID);
+
+			var rowCount = table.rows.length;
+			var row = table.insertRow(rowCount);
+
+			var cell1 = row.insertCell(0);
+            /*var newDiv = document.createElement("div");
+            newDiv.className = "checkBox"; */
+			var element1 = document.createElement("input");
+			element1.type = "checkbox";
+			element1.name="chkbox[]";
+            // element1.setAttribute("id", rowCount + "checkBoxDel");
+           // var label = document.createElement("label");
+            // label.setAttribute("for",rowCount + "checkBoxDel");
+            //newDiv.appendChild(element1);
+            //newDiv.appendChild(label);
+			cell1.appendChild(element1);
+
+			var cell2 = row.insertCell(1);
+            var nameDiv = document.createElement("div");
+            nameDiv.className="nameDiv";
+			var element2 = document.createElement("input");
+			element2.type = "text";
+            
+			element2.name = "firstName";
+            var lineBreak = document.createElement("br");
+            var lineBreak2 = document.createElement("br");
+            var lineBreak3 = document.createElement("br");
+            var element3 = document.createElement("input");
+            element3.type = "text";
+			element3.name = "lastName"; 
+            
+            nameDiv.appendChild(element2);
+            nameDiv.appendChild(lineBreak);
+            nameDiv.appendChild(lineBreak2);
+            nameDiv.appendChild(lineBreak3);
+            nameDiv.appendChild(element3);
+			cell2.appendChild(nameDiv);
+
+             for(var i = 2; i < numLessons; i++){
+                
+                var lesson = row.insertCell(i);
+                var image = document.createElement("IMG");
+                image.setAttribute("src", "Blank.jpg");
+                image.setAttribute("width", "65");
+                image.setAttribute("height", "120");
+                image.setAttribute("id", "Blank" + i);
+                image.setAttribute("onclick", "swap(this)");
+                lesson.appendChild(image);
+             }
+		}
+
+		function deleteRow(tableID) {
+			try {
+			var table = document.getElementById(tableID);
+			var rowCount = table.rows.length;
+
+			for(var i=0; i<rowCount; i++) {
+				var row = table.rows[i];
+				var chkbox = row.cells[0].childNodes[0];
+				if(null != chkbox && true == chkbox.checked) {
+					table.deleteRow(i);
+					rowCount--;
+					i--;
+				}
+			}
+			}catch(e) {
+				alert(e);
+			}
+		}
+	</script>
+    <style>
+        
+    </style>
+  </head>
+
+  <body>
+      
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="row">
+    <div class="col-md-12 title">
+        <img src="RoboRanksTitle.jpg" />
+    </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 btn-row">
+            <button class="Add" onclick="addRow('dataTable')"><i class="fa fa-power-off fa-rotate-180"></i> Add Hacker</button>
+            <button class="Delete" onclick="deleteRow('dataTable')"><i class="fa fa-times-circle-o"></i>Delete Hacker</button>
+        </div>
+        
+    </div>
+
+    <div class=theTable>
+    <script>
+        var table = '';
+        var headingRow = '<tr class="tableHeading"><th> </th><th><h1>' + lessonName + '</h1></th>';
+        var cols = numLessons - 2;
+        for (var c = 1; c <= cols; c++){
+            headingRow += '<th><h1>';
+            headingRow += 'L' + c;
+            headingRow += '</h1></th>'
+        };
+        headingRow += '</tr>';
+        var tableDecs = '<img src="TableDecs.jpg" />'
+
+        table = headingRow + tableDecs
+        document.write('<TABLE id="dataTable" width="350px" border="0">' + table + '</TABLE>')
+    </script>
+    </div>
+    <BR />
+    <BR />
+    <BR />
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+  </body>
+</html>

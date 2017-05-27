@@ -1,0 +1,90 @@
+body{
+    background-color: black;
+}
+.row .title img{
+    width:1452.22px;
+
+}
+.btn-row{
+    background-color: #6DC04E;
+}
+.btn-row .Add{
+    float: left;
+    background: transparent;
+    border: none;
+    font-size: 1.4em;
+    font-family: 'Lato', sans-serif;
+}
+.btn-row .Add:focus{
+    outline: none;
+}
+.btn-row .Delete{
+    float: right;
+    background: transparent;
+    border: none;
+    font-size: 1.4em;
+    font-family: 'Lato', sans-serif;
+}
+.btn-row .Delete:focus{
+    outline: none
+}
+.btn-row i{
+    margin-right: 5px
+}
+table{
+    width:100%;
+}
+th{
+    height:50px;
+}
+td{
+    max-width: 200px;
+}
+.theTable td input[type=checkbox]{
+    margin-left: 20px;
+}
+.tableHeading{
+    font-family: 'Lato', sans-serif;
+    color: white;
+}
+.tableHeading th h1{
+    margin-left: 18px;
+    font-size: 1.5em;
+}
+.nameDiv{
+    margin-right: 20px;
+}
+.nameDiv input[name=firstName]{
+    position: relative;
+    height: 75px;
+    border: none;
+    font-size: 5em;
+    border-bottom: 2px solid #6DC04E;
+    background: transparent;
+    color: white;
+    direction: RTL;
+    font-family: 'Lato', sans-serif;
+    float: right;
+    max-width: 325px;
+}
+.nameDiv input[name=firstName]:focus{
+    border: none;
+    outline: none;
+}
+.nameDiv input[name=lastName]{
+    position: relative;
+    height: 50px;
+    border: none;
+    font-size: 2.5em;
+    border-bottom: 2px solid white;
+    background: transparent;
+    color: #6DC04E;
+    direction: rtl;
+    font-family: 'Lato', sans-serif;
+    float: right;
+    max-width: 325px;
+}
+.nameDiv input[name=lastName]:focus{
+    border: none;
+    outline: none;
+}

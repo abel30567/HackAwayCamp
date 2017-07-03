@@ -1,23 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>RoboRanks</title>
+    <title>HackAway Badge</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
      <link rel = "stylesheet" type = "text/css" href = "index.css" />
      <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
      <link href="https://fonts.googleapis.com/css?family=Lato:700" rel="stylesheet">
       <meta name="viewport" content="width=device-width, initial-scale = 1.0" />
-    <script language="javascript">
+    <link rel="shortcut icon" href="favicon.ico">
+    <style>
         
-        var lessonName = prompt("What is the name of the lesson?");
-        var numLessons = Number (prompt("How many lessons are there?"));
+    </style>
+  </head>
+
+  <body>
+      
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="row">
+    <div class="col-md-12 title">
+        <img style="width:100%" src="SummerLogo.jpg" />
+    </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 btn-row">
+            <button class="Add" onclick="addRow('dataTable')"><i class="fa fa-power-off fa-rotate-180"></i> Add Hacker</button>
+            <button class="Delete" onclick="deleteRow('dataTable')"><i class="fa fa-times-circle-o"></i>Delete Hacker</button>
+        </div>
         
-        var numLessons = numLessons + 2;
+    </div>
+
+    <div class=theTable>
+        <script language="javascript">
+        
+        var lessonName = "Coder HackAway Badge";
         
         var swap = function (img) {
-            img.src = 'https://c1.staticflickr.com/5/4243/34914692071_bce00bf897_m.jpg' === img.src ?
-                'https://c1.staticflickr.com/5/4283/35046479595_a2e2ee7dd1_m.jpg'
-            : 'https://c1.staticflickr.com/5/4243/34914692071_bce00bf897_m.jpg';
+            img.src = 'https://c1.staticflickr.com/5/4056/34874336213_832a0caeaa.jpg' === img.src ?
+                'https://c1.staticflickr.com/5/4030/34873957953_f91c41c223.jpg'
+            : 'https://c1.staticflickr.com/5/4056/34874336213_832a0caeaa.jpg';
         };
 		function addRow(tableID) {
 
@@ -60,11 +80,11 @@
             nameDiv.appendChild(element3);
 			cell2.appendChild(nameDiv);
 
-             for(var i = 2; i < numLessons; i++){
+             for(var i = 2; i < 15; i++){
                 
                 var lesson = row.insertCell(i);
                 var image = document.createElement("IMG");
-                image.setAttribute("src", "Blank.jpg");
+                image.setAttribute("src", "WRobot.jpg");
                 image.setAttribute("width", "65");
                 image.setAttribute("height", "120");
                 image.setAttribute("id", "Blank" + i);
@@ -92,39 +112,18 @@
 			}
 		}
 	</script>
-    <style>
-        
-    </style>
-  </head>
-
-  <body>
-      
-    <!-- Main jumbotron for a primary marketing message or call to action -->
-    <div class="row">
-    <div class="col-md-12 title">
-        <img src="RoboRanksTitle.jpg" />
-    </div>
-    </div>
-    <div class="row">
-        <div class="col-md-12 btn-row">
-            <button class="Add" onclick="addRow('dataTable')"><i class="fa fa-power-off fa-rotate-180"></i> Add Hacker</button>
-            <button class="Delete" onclick="deleteRow('dataTable')"><i class="fa fa-times-circle-o"></i>Delete Hacker</button>
-        </div>
-        
-    </div>
-
-    <div class=theTable>
     <script>
         var table = '';
-        var headingRow = '<tr class="tableHeading"><th> </th><th><h1>' + lessonName + '</h1></th>';
-        var cols = numLessons - 2;
-        for (var c = 1; c <= cols; c++){
+        var headingRow = '<tr class="tableHeading"><th> </th><th><h1 class="HackAwayBadge">' + lessonName + '</h1></th>';
+        var cols = 13;
+        var skills = ['Beginner',' ',' ', 'Novice', ' ',' ', 'Advanced',' ', ' ', 'Expert', ' ', ' ', 'Master'];
+        for (var c = 0; c < cols; c++){
             headingRow += '<th><h1>';
-            headingRow += 'L' + c;
+            headingRow += skills[c];
             headingRow += '</h1></th>'
         };
         headingRow += '</tr>';
-        var tableDecs = '<img src="TableDecs.jpg" />'
+        var tableDecs = '<div class="row"><img style="width:100%" src="HackShackBanner.jpg" /></div>'
 
         table = headingRow + tableDecs
         document.write('<TABLE id="dataTable" width="350px" border="0">' + table + '</TABLE>')

@@ -55,7 +55,7 @@ td img{
     color: #656263;
 }
 .tableHeading th h1{
-    font-size: 1.5em;
+    font-size: 3.5em;
     
 }
 .nameDiv{
@@ -72,7 +72,7 @@ td img{
     direction: RTL;
     font-family: 'Lato', sans-serif;
     float: right;
-    max-width: 325px;
+    max-width: 90%;
 }
 .nameDiv input[name=firstName]:focus{
     border: none;
@@ -89,7 +89,7 @@ td img{
     direction: rtl;
     font-family: 'Lato', sans-serif;
     float: right;
-    max-width: 325px;
+    max-width: 80%;
 }
 .nameDiv input[name=lastName]:focus{
     border: none;
